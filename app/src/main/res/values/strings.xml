@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name" translatable="false">Heal</string>
+    <string name="follow_system">Follow system</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="back">Go back</string>
+    <string name="more">More</string>
+    <string name="today">Today</string>
+    <string name="days_before">%d days before</string>
+    <string name="episodes">%d Episodes</string>
+    <string name="publish_date">Publish on: %s</string>
+    <string name="duration">Duration: %s min</string>
+    <string name="episode_description">Episode description</string>
+    <string name="feed">Feed</string>
+    <string name="home">Home</string>
+    <string name="listen">Listen</string>
+    <string name="library">Library</string>
+    <string name="minutes_left">%d mins left</string>
+    <string name="subscriptions">Subscriptions</string>
+    <string name="resume_listening">Resume listening</string>
+    <string name="latest_episodes">Latest episodes</string>
+    <string name="unsubscribe">Unsubscribe</string>
+    <string name="podcast_settings">Podcast settings</string>
+    <string name="open_url">Open URL</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="unsubscribe_msg">Are you sure you want to unsubscribe \"%s\"? This will delete all downloaded episodes at the same time and cannot be undone.</string>
+    <string name="open_rss">Open RSS feed</string>
+    <string name="playback">Playback</string>
+    <string name="playback_desc">Control, timer, player settings</string>
+    <string name="download">Download</string>
+    <string name="download_settings_desc">Download directory, storage management</string>
+    <string name="user_interface">User Interface</string>
+    <string name="user_interface_desc">Color theming, dark theme, language</string>
+    <string name="defaults">Defaults</string>
+    <string name="la_zh_CN" translatable="false">简体中文</string>
+    <string name="la_en_US" translatable="false">English</string>
+    <string name="dark_theme">Dark theme</string>
+    <string name="interface_language">Language</string>
+    <string name="about">About</string>
+    <string name="about_desc"><![CDATA[Credits & open source]]></string>
+    <string name="settings">Settings</string>
+    <string name="episode_title_sample">Ep23: Episode title sample text</string>
+    <string name="podcast_author_sample">Podcast author</string>
+    <string name="podcast_title_sample">Podcast title</string>
+    <string name="downloads">Downloads</string>
+    <string name="queue">Queue</string>
+    <string name="history">History</string>
+    <string name="subscribe_rss">Subscribe RSS feed</string>
+    <string name="fetch_podcast">Fetch podcast</string>
+    <string name="dynamic_color">Dynamic color</string>
+    <string name="dynamic_color_desc">Apply colors from wallpapers to the app theme</string>
+    <string name="exo_controls_shuffle_on_description">shuffle on</string>
+    <string name="exo_controls_shuffle_off_description">shuffle off</string>
+    <string name="opml_title" translatable="false">Heal Subscriptions</string>
+    <string name="refresh_feed_successfully">Refresh feed successfully</string>
+    <string name="refresh_feed_failed">Refresh feed failed</string>
+    <string name="import_from_ompl" translatable="false">Import from OPML</string>
+    <string name="explore" translatable="false">Explore</string>
+    <string name="search_podcast">Search podcast</string>
+    <string name="discover">Discover</string>
+</resources>

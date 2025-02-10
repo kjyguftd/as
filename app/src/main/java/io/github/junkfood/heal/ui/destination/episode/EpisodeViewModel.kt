@@ -1,0 +1,67 @@
+package io.github.junkfood.heal.ui.destination.episode
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
+import io.github.junkfood.heal.database.Repository
+import io.github.junkfood.heal.util.TextUtil
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
+import java.util.*
+
+class EpisodeViewModel constructor(private val episodeId: Long) : ViewModel() {
+
+    data class EpisodeViewState(
+        val episodeId: Long = 0,
+        val podcastId: Long = 0, val podcastTitle: String = "",
+        val title: String = "",
+        val author: String = "",
+        val podcastImageUrl: String = "",
+        val imageUrl: String = "",
+        val description: String = "",
+        val duration: Long = 0,
+        val pubDate: Date = Date()
+    )
+
+    private val mutableStateFlow = MutableStateFlow(EpisodeViewState())
+    val stateFlow = mutableStateFlow.asStateFlow()
+
+
+    fun initEpisodeContent() {
+        viewModelScope.launch(Dispatchers.IO) {
+            val episode = Repository.getEpisodeById(episodeId)
+            val podcast = Repository.getPodcastById(episode.podcastId)
+            mutableStateFlow.update {
+                it.copy(
+                    episodeId = episodeId,
+                    podcastId = episode.podcastId,
+                    podcastTitle = podcast.title,
+                    podcastImageUrl = podcast.coverUrl,
+                    title = episode.title,
+                    author = podcast.author,
+                    imageUrl = episode.cover,
+                    description = episode.description,
+                    duration = episode.duration,
+                    pubDate = TextUtil.parseXmlStringToDate(episode.pubDate) ?: Date()
+                )
+            }
+        }
+
+    }
+
+    init {
+        viewModelScope.launch(Dispatchers.IO) {
+            initEpisodeContent()
+        }
+    }
+
+}
+
+class EpisodeViewModelProvider(private val episodeId: Long) : ViewModelProvider.Factory {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        return EpisodeViewModel(episodeId) as T
+    }
+}
